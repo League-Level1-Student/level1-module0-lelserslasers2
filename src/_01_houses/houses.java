@@ -29,7 +29,7 @@ public class houses {
 			else {
 				tallness = "large";
 			}
-			drawHouse(robo, tallness);
+			drawHouse(robo, tallness, rand);
 			robo.setPenColor(255,0,0);
 		}
 		
@@ -37,8 +37,10 @@ public class houses {
 	}
 	
 	
-	static void drawHouse(Robot rob, String tall) {
+	static void drawHouse(Robot rob, String tall, Random ran) {
+		rob.setPenColor(ran.nextInt(255),ran.nextInt(255), ran.nextInt(255));
 		int hieght = 0;
+		int point = 0;
 		if (tall.equals("small")) {
 			hieght= 60;
 		}
@@ -47,19 +49,37 @@ public class houses {
 		}
 		else {
 			hieght=250;
+			point = 1;
 		}
 		
 		rob.turn(-90);
 		rob.move(hieght);
-		rob.turn(90);
-		rob.move(20);
-		rob.turn(90);
+		if (point == 0) {
+			drawPointyRoof(rob);
+		}
+		else {
+			drawFlatRoof(rob);
+		}
 		rob.move(hieght);
 		rob.turn(-90);
 		rob.setPenColor(0,200,0);
 		rob.move(20);
 		
 		
+	}
+	
+	static void drawFlatRoof(Robot rob) {
+		rob.turn(90);
+		rob.move(20);
+		rob.turn(90);
+	}
+	
+	static void drawPointyRoof(Robot rob) {
+		rob.turn(45);
+		rob.move(14);
+		rob.turn(90);
+		rob.move(14);
+		rob.turn(45);
 	}
 
 }
