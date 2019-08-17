@@ -72,24 +72,39 @@ public class BodyPartQuiz {
 				JOptionPane.showMessageDialog(null, "Wrong!! The correct answer is Arnold Schwarzenegger");
 			}
 		}
-		 //UNSLASH :!!!!!!!!!!!!!!!!!!
-		/*if (i == 1) {
-			if (guess.equals("Arnold Schwarzenegger")) {
+		
+		else if (i == 1) {
+			if (guess.equals("???????")) {
 				JOptionPane.showMessageDialog(null, "Right!!");
 			}
 			else {
-				JOptionPane.showMessageDialog(null, "Wrong!! The correct answer is Arnold Schwarzenegger");
+				JOptionPane.showMessageDialog(null, "Wrong!! The correct answer is ?????????");
 			}
-		}*/
+		}
+		else if (i == 2) {
+			if (guess.equals("???????")) {
+				JOptionPane.showMessageDialog(null, "Right!!");
+			}
+			else {
+				JOptionPane.showMessageDialog(null, "Wrong!! The correct answer is ???????????");
+			}
+		}
+		else if (i == 3) {
+			if (guess.equals("???????")) {
+				JOptionPane.showMessageDialog(null, "Right!!");
+			}
+			else {
+				JOptionPane.showMessageDialog(null, "Wrong!! The correct answer is ????????????");
+			}
+		}
 		
-		//NEED TO DO I == 2 AND I == 3!!!!!!!!!!!!!!!!!!!!!!!!!!!
 		// 7. Use the showNextImage() method below to get the next image
 		showNextImage();
 
 		// 8. .... repeat 4-7 for all your images.....
 		}
 		// 9. Show them their current score
-
+		JOptionPane.showMessageDialog(null, "your score is: " + score);
 	}
 
 	public void showNextImage() {
